@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wardrobe</title>
+</head>
+<body>
+<h1>Clothing Items</h1>
+<a href="{% url 'clothing_create' %}">Add New Clothing Item</a>
+<ul>
+    {% for item in items %}
+        <li>
+           {{item.brand}} ({{item.occasion}}) -$ {{item.price}}
+                <a href="{% url 'clothing_update'item.pk %}">Edit</a>
+                <a href="{%url 'clothing_delete' item .pk %}">Delete</a>
+  </li>
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>
